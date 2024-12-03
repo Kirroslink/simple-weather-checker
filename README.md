@@ -107,7 +107,7 @@ Feel free to fork this repository, make improvements, and submit pull requests! 
 ---
 
 ## License
-This project is licensed under the MIT License. See `LICENSE` for details.
+This project is licensed under the GNU General Public License. See `LICENSE` for details.
 
 ---
 
