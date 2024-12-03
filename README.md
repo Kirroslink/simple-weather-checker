@@ -1,7 +1,3 @@
-Here's a draft for your `README.md` file:
-
----
-
 # Arduino Temperature and Humidity Display
 
 This repository contains code for an Arduino project that reads ambient temperature and humidity using a **DHT22 sensor** and displays the data on an **LCD screen**. This project is perfect for beginners learning about sensors, displays, and microcontroller programming.
@@ -58,8 +54,7 @@ Connect the components as shown below:
 ## Installation
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/arduino-dht22-lcd.git
-   cd arduino-dht22-lcd
+   https://github.com/Kirroslink/simple-weather-checker/blob/main/Code%20file
    ```
 2. Install the required libraries via Arduino IDE:
    - Open **Library Manager** (`Sketch > Include Library > Manage Libraries...`).
