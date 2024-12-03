@@ -1,0 +1,51 @@
+#include <LiquidCrystal_I2C.h>
+#include "DHT.h"
+#define DHTPIN 2 
+#define DHTTYPE DHT22  
+
+
+#define I2C_ADDR    0x27
+#define LCD_COLUMNS 20
+#define LCD_LINES   4
+
+LiquidCrystal_I2C lcd(I2C_ADDR, LCD_COLUMNS, LCD_LINES);
+DHT dht(DHTPIN, DHTTYPE);
+
+void setup() {
+  lcd.init();
+  lcd.backlight();
+  // you can now interact with the LCD, e.g.:
+  lcd.println(F("DHTxx test!"));
+  dht.begin();
+  Serial.begin(9600);
+}
+
+void loop() {
+  delay(2000);
+
+    lcd.clear();
+  
+    float h = dht.readHumidity();
+    float f = dht.readTemperature(true);
+
+      if (isnan(h) || isnan(f)) {
+    lcd.println(F("Failed to read from DHT sensor!"));
+    return;
+  }
+ lcd.setCursor(0,1);
+  lcd.print("humid: ");
+  lcd.print(h);
+  lcd.print("%");
+ lcd.setCursor(0,0);
+  lcd.print("temp: ");
+  lcd.print(f);
+  lcd.write(223);
+  lcd.print("F");
+
+  serupdate(h,f);
+}
+
+void serupdate(float h, float f){
+  Serial.println(f);
+  Serial.println(h);
+}
